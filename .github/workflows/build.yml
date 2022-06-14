@@ -22,4 +22,4 @@ jobs:
 
       - name: Compile
         run:
-          /usr/loca/bin/mill -j 4 __.compile
+          /usr/local/bin/mill -j 4 __.compile
