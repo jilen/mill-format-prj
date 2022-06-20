@@ -8,13 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone mill
+      - name: Install Local
         run:
-          git clone https://github.com/com-lihaoyi/mill.git /tmp/mill
-      - name: Build local
-        run:
-          ./mill installLocal
-        working-directory: /tmp/mill
+          bash build/install-local.sh
 
       - name: Clone Repository
         uses: actions/checkout@v2
