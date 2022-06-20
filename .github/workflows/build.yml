@@ -6,6 +6,15 @@ on:
       - main
 
 jobs:
+  install-mill:
+    steps:
+      - name: Close mill
+        run:
+          git clone git@github.com:com-lihaoyi/mill.git /tmp/mill
+      - name: Build local
+        run:
+          ./mill installLocal
+        working-directory: /tmp/mill
   build:
     runs-on: ubuntu-latest
     steps:
@@ -19,5 +28,7 @@ jobs:
 
 
       - name: Compile
+        env:
+          MILL_DIR: /tmp/mill/target
         run:
           bash build/build.sh
