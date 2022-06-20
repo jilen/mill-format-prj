@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Clone mill
         run:
-          git clone git@github.com:com-lihaoyi/mill.git /tmp/mill
+          git clone https://github.com/com-lihaoyi/mill.git /tmp/mill
       - name: Build local
         run:
           ./mill installLocal
