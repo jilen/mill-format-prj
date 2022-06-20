@@ -12,14 +12,12 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v2
 
-      - name: Set up JDK 1.8
+      - name: Set up JDK
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
 
-      - name: Install
-        run: curl -L https://github.com/com-lihaoyi/mill/releases/download/0.10.4/0.10.4 > /usr/local/bin/mill && chmod +x /usr/local/bin/mill
 
       - name: Compile
         run:
-          /usr/local/bin/mill -j 4 __.compile
+          bash build/build.sh
