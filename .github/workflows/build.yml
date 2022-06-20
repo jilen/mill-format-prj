@@ -8,12 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+
       - name: Install Local
         run:
           bash build/install-local.sh
-
-      - name: Clone Repository
-        uses: actions/checkout@v2
 
       - name: Set up JDK
         uses: actions/setup-java@v1
